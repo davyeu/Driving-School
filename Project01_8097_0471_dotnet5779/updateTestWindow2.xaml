@@ -1,0 +1,89 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PL.updateTestWindow2"
+        mc:Ignorable="d"
+        Title="updateTestWindow2" Height="520" Width="300" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="testViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:Test}, CreateList=True}"/>
+        <CollectionViewSource x:Key="myEnumViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:MyEnum}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid x:Name="TestDetails" DataContext="{StaticResource testViewSource}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="404">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Back Parking:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+        <CheckBox x:Name="backParkingCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding BackParking, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+        <Label Content="Gear Box:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
+        <ComboBox x:Name="gearBoxComboBox"
+                  Grid.Column="1" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding Source={StaticResource myEnumViewSource}}" Margin="3" Grid.Row="1" VerticalAlignment="Center" Width="120" SelectedValue="{Binding MyEnum.kindOfCars.GearBox}"/>
+        <Label Content="Id Of Test:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
+        <TextBox x:Name="idOfTestTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding IdOfTest, Mode=OneWay}" VerticalAlignment="Center" Width="120"/>
+        <Label Content="Id Of Tester:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
+        <TextBox x:Name="idOfTesterTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding IdOfTester, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        <Label Content="Id Of Trainee:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
+        <TextBox x:Name="idOfTraineeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding IdOfTrainee, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        <Label Content="Keep Distance:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
+        <CheckBox x:Name="keepDistanceCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding KeepDistance, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="5" VerticalAlignment="Center"/>
+        <Label Content="Kind Of Car:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="6" VerticalAlignment="Center"/>
+        <ComboBox x:Name="kindOfCarComboBox" 
+                  Grid.Column="1" 
+                  HorizontalAlignment="Left" 
+                  Height="Auto" ItemsSource="{Binding Source={StaticResource myEnumViewSource}}" Margin="3" Grid.Row="6" VerticalAlignment="Center" Width="120" SelectedValue="{Binding KindOfCar}">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <Label Content="Looking At Mirrors:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
+        <CheckBox x:Name="lookingAtMirrorsCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding LookingAtMirrors, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="7" VerticalAlignment="Center"/>
+        <Label Content="Score:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="8" VerticalAlignment="Center"/>
+        <CheckBox x:Name="scoreCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding Score, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="8" VerticalAlignment="Center"/>
+        <Label Content="Signals:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="9" VerticalAlignment="Center"/>
+        <CheckBox x:Name="signalsCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding Signals, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="9" VerticalAlignment="Center"/>
+        <Label Content="Tester Remark:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="10" VerticalAlignment="Center"/>
+        <TextBox x:Name="testerRemarkTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="10" Text="{Binding TesterRemark, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        <Label Content="Time Of Test:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="11" VerticalAlignment="Center"/>
+        <DatePicker x:Name="timeOfTestDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="11" SelectedDate="{Binding TimeOfTest, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+        <Button x:Name="updateButton" Grid.Row="12"
+                Visibility="Visible"
+                Grid.ColumnSpan="2"
+                Content="עדכן"
+                HorizontalAlignment="Left"
+                Margin="-8,2,0,0"
+                VerticalAlignment="Top" 
+                Width="249" Height="21" Click="updateButton_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+
+
+</Window>
+

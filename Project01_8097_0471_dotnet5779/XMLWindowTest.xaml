@@ -1,0 +1,27 @@
+﻿<Window x:Class="PL.XMLWindowTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        FontSize="30"
+      Title="XMLWindowTest" Height="200" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="AddTest" Content="הוסף מבחן  " Click="AddTest_Click" />
+        <Button x:Name="UpdateTast" Content="עדכן מבחן"
+                Grid.Row="1" Click="UpdateTast_Click"/>
+        <Button x:Name="DeleteTest" Content=" מחק מבחן "
+            Grid.Row="2" Click="DeleteTest_Click"  />
+
+    </Grid>
+</Window>

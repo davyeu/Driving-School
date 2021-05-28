@@ -1,0 +1,53 @@
+﻿<Window x:Class="PL.UpdateTesterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="UpdateTesterWindow" Height="450" Width="500">
+
+    
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="innerGrid" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1"
+                Content=":בחר בוחן" 
+                 FontSize="30"
+                HorizontalAlignment="Center" 
+                 VerticalAlignment="Top"
+                 Height="50" 
+                 Width="150"   />
+            <ComboBox x:Name="ComoBoxTesters" Grid.Row="1" FontSize="15"
+                 Height="50" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                  ItemsSource="{Binding}" />
+            <Button x:Name="updateTester" Grid.Row="1" 
+                Content="עדכן פרטי בוחן"
+                FontSize="25"
+               HorizontalAlignment="Stretch"
+                VerticalAlignment="Bottom"
+                Width="170" Height="53" Click="updateTester_Click"/>
+            <Button x:Name="workSchedule" Grid.Row="2"
+                Content="סידור ימי עבודה"
+                FontSize="24"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top" Margin="10"
+                Width="170" Height="53" Click="workSchedule_Click"/>
+        </Grid>
+        
+
+
+    </Grid>
+</Window>

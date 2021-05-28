@@ -1,0 +1,132 @@
+﻿<Window x:Class="PL.UpdateTesterWindow2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="UpdateTesterWindow2" Height="575" Width="450" FontSize="35">
+    <Grid x:Name="TesterDetailsGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="עדכן את פרטי הבוחן"
+               FontSize="15" HorizontalAlignment="Center" Grid.Row="0" />
+
+
+
+
+        <Grid x:Name="TesterDetails" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+
+
+            </Grid.RowDefinitions>
+
+
+
+            <Label Content="Id:" Grid.Column="0"  FontSize="15" Grid.Row="0"/>
+            <TextBox x:Name="idTextBox" Text="{Binding Path=Id}" 
+                     IsEnabled="False" Grid.Column="1" Grid.Row="0" Height="25" FontSize="15"/>
+
+            <Label Content="First Name:" Grid.Column="0"  FontSize="15" Grid.Row="1"/>
+            <TextBox x:Name="FNameTextBox" Text="{Binding Path=FirstName }"
+                     Grid.Column="1" Grid.Row="1" Height="25" FontSize="15"/>
+
+            <Label Content="Last Name:" Grid.Column="0"  FontSize="15" Grid.Row="2"/>
+            <TextBox x:Name="LNameTextBox" Text="{Binding Path= LastName}"
+                     Grid.Column="1" Grid.Row="2" Height="25" FontSize="15"/>
+
+            <Label Content="Birthday:" Grid.Column="0"  FontSize="15" Grid.Row="3"/>
+            <DatePicker x:Name="birthDayPicker" DisplayDate="{Binding Path= DateOfBirth}"
+                        FontSize="15" DisplayDateStart="01.01.1950"
+                    DisplayDateEnd= "01.01.1979" Grid.Column="1" Grid.Row="3">
+            </DatePicker>
+
+            <Label Content="Gender:" Grid.Column="0"  FontSize="15" Grid.Row="4"/>
+            <ComboBox x:Name="genderList" FontSize="15" Grid.Column="1" Grid.Row="4">
+                <ComboBoxItem Content="Male"/>
+                <ComboBoxItem Content ="Female"/>
+            </ComboBox>
+
+            <Label Content="PhoneNumber:" Grid.Column="0"  FontSize="15" Grid.Row="5"/>
+            <TextBox x:Name="PhoneTextBox" Text="{Binding Path=PelephoneNumber}"
+                     Grid.Column="1" Grid.Row="5" Height="25" FontSize="15"/>
+
+            <Grid x:Name="AddressLabels"  Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="33*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Street name:"   FontSize="15" Grid.Row="0"/>
+                <Label Content=" number of building" FontSize="15" Grid.Row="1"/>
+                <Label Content=" city" FontSize="15" Grid.Row="2"/>
+
+            </Grid>
+            <Grid x:Name="AddressTextBox" Grid.Row="6" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="StreetTextBox"  Text="{Binding Path=Address.StreetName}"
+                         Grid.Row="0" Height="30" FontSize="15"/>
+                <TextBox x:Name="BuildingTextBox"  Text="{Binding Path=Address.NumberOfBuilding}"
+                         Grid.Row="1" Height="30" FontSize="15"/>
+                <TextBox x:Name="CityTextBox" Text="{Binding Path=Address.City}"
+                         Grid.Row="2" Height="30" FontSize="15"/>
+            </Grid>
+
+            <Label Content="Time of experience:" Grid.Column="0"  FontSize="15" Grid.Row="7"/>
+            <TextBox x:Name="ExperienceTextBox" Text="{Binding Path=NumOfExperience}"
+                     Grid.Column="1" Grid.Row="7" Height="25" FontSize="15"/>
+
+            <Label Content="Maximum number of tests:" Grid.Column="0"  FontSize="15" Grid.Row="8"/>
+            <TextBox x:Name="MaxTestsTextBox"  Text="{Binding Path=MaxOfTestInWeek}"
+                     Grid.Column="1" Grid.Row="8" Height="25" FontSize="15"/>
+
+            <Label Content="Kind of car:" Grid.Column="0"  FontSize="15" Grid.Row="9"/>
+
+            <ListBox x:Name="carList"   FontSize="15" Grid.Column="1" Grid.Row="9"
+                SelectionMode ="Multiple">
+                <ListBox.Items>
+                <ListBoxItem Content="PrivateCar"/>
+                <ListBoxItem Content="TwoWheeledVehicles"/>
+                <ListBoxItem Content="Truck"/>
+                <ListBoxItem Content="Semitrailer"/>
+                </ListBox.Items>
+            </ListBox>
+
+            <Label Content="maximum distance :" Grid.Column="0"  FontSize="15" Grid.Row="11"/>
+            <TextBox x:Name="distanceTextBox" Text="{Binding Path= MaximumDistanceFromAddress}"
+                     Grid.Column="1" Grid.Row="11" Height="25" FontSize="15"/>
+
+
+        </Grid>
+        <Button x:Name="AddButton" Content="עדכן" Grid.Row="2" Click="Button_Click"/>
+
+    </Grid>
+</Window>

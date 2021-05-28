@@ -1,0 +1,28 @@
+﻿<Window x:Class="PL.XMLWindowMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        FontSize="20"
+        Title="XMLWindowMenu" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+        <Label x:Name="creatFile" Content="בחר איזה קובץ ליצור\להעלות" 
+               HorizontalAlignment="Center"/>
+        <Button x:Name="TestersFile" Content="קובץ בוחנים" 
+               Grid.Row="1" Click="TestersFile_Click" />
+        <Button x:Name="TraineesFile" Content="קובץ תלמידים"
+                Grid.Row="2" Click="TraineesFile_Click"/>
+        <Button x:Name="TestsFile" Content= "קובץ מבחנים"
+                Grid.Row="3" Click="TestsFile_Click"/>
+
+    </Grid>
+</Window>

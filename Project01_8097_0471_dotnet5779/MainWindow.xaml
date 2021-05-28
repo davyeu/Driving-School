@@ -1,0 +1,80 @@
+﻿<Window x:Class="Project01_8097_0471_dotnet5779.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project01_8097_0471_dotnet5779"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="560"
+        Width="800">
+    <Grid>
+        <Image  Source="images/Capture2.PNG"/>
+        <TextBlock x:Name="textBlock" 
+                   
+                   HorizontalAlignment="Center"
+                   Margin="50"
+                   TextWrapping="Wrap" 
+                   Text="Driving School"
+                   VerticalAlignment="Top" Width="300" FontFamily="Ink Free" Height="54" FontSize="36" FontWeight="Bold" TextAlignment="Center"/>
+        <Grid>
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="Show_data" Content="הצג נתונים "
+                    Grid.Column="1"  Grid.Row="1" VerticalAlignment="Center"
+                    Width="200" Height="50" Margin="10" FontSize="30" Click="show_data"/>
+            <Button x:Name="XMLfile" Content=" קרא נתונים מקובץ"
+                   Grid.Column="1"  Grid.Row="1" FontSize="20"
+                     VerticalAlignment="Bottom" Width="200" Height="50" Margin="10" Click="XMLfile_Click"/>
+            <Button x:Name="AddTester" Content="הוסף בוחן" Grid.Column="2" Grid.Row="1"
+              FontSize="30"  VerticalAlignment ="Top"  Width="200" Height="50"
+                    Click="AddTester_Click"/>
+            <Button x:Name="UpdateTester" Content="עדכן בוחן" Grid.Column="2"
+                   FontSize="30" Grid.Row="1" VerticalAlignment ="Center" 
+                     Margin="10"  Width="200" Height="50" Click="UpdateTester_Click"/>
+            <Button x:Name="DeleteTester" Content="מחק בוחן" Grid.Column="2" Grid.Row="1"
+                     FontSize="30"  VerticalAlignment ="Bottom"  Width="200" Height="50" Click="DeleteTester_Click" />
+            <Button x:Name="AddTrainee" Grid.Row="1" Grid.Column="0" 
+                Content="הוסף תלמיד"
+                HorizontalAlignment="Center"
+                FontSize="30"  VerticalAlignment ="Top"  Width="200" Height="50"                
+                Click="AddTrainee_Click"  />
+            <Button x:Name="updateTrainee" Grid.Row="1" Grid.Column="0"
+                Content="עדכן תלמיד"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                FontSize="30"  Width="200" Height="50"
+                Click="updateTrainee_Click"  />
+            <Button x:Name="removeTrainee"  Grid.Row="1" Grid.Column="0"
+                Content="מחק תלמיד" 
+                HorizontalAlignment="center" VerticalAlignment="Bottom"
+                  FontSize="30"  Width="200" Height="50"
+                    Click="removeTrainee_Click"/>
+            <Button x:Name="addTest" Grid.Row="2" Grid.Column="1"
+                    HorizontalAlignment="Center" VerticalAlignment ="Top"
+                    FontSize="30"  Width="200" Height="50"
+                    Content="הוסף מבחן" Click="addTest_Click"/>
+            <Button x:Name="updateTest" Grid.Row="2" Grid.Column="1"
+                     HorizontalAlignment="Center" VerticalAlignment ="Center"
+                     FontSize="30"  Width="200" Height="50"
+                    Content="עדכן מבחן" Click="updateTest_Click"/>
+            <Button x:Name="deleteTest" Grid.Row="2" Grid.Column="1"
+                    HorizontalAlignment="Center" VerticalAlignment ="Bottom"
+                     FontSize="30"  Width="200" Height="50"
+                    Content="מחק מבחן" Click="deleteTest_Click"/>
+        </Grid>
+        
+
+
+    </Grid>
+
+
+</Window>
+

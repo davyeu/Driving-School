@@ -1,0 +1,21 @@
+﻿<Window x:Class="PL.dataPresention"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="dataPresention" Height="200" Width="400">
+    <Grid>
+        <Button x:Name="show_testers" Content="הצג בוחנים"
+                 VerticalAlignment="Top"
+                Width="200" Height="50"  FontSize="20" Click="show_testers_Click"/>
+        <Button x:Name="show_trainees" Content="הצג נבחנים"
+                 VerticalAlignment="Center"
+                Width="200" Height="50"  FontSize="20" Click="show_trainees_Click"/>
+        <Button x:Name="show_tests" Content="הצג נבחנים"
+                 VerticalAlignment="Bottom"
+                Width="200" Height="50"    FontSize="20" Click="show_tests_Click"/>
+        
+    </Grid>
+</Window>

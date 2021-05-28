@@ -1,0 +1,88 @@
+﻿<Window x:Class="PL.addTestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:local="clr-namespace:BE;assembly=BE"
+        mc:Ignorable="d"
+        Title="addTestWindow" Height="300" Width="450" FontSize="35">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="הכנס את פרטי המבחן"
+               FontSize="15" HorizontalAlignment="Center" Grid.Row="0" />
+
+
+
+
+        <Grid x:Name="TestDetails" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="IdTest:" Grid.Column="0"  FontSize="15" Grid.Row="0"/>
+            <TextBox x:Name="idTextBox"  IsEnabled="False" 
+                    Grid.Column="1" Grid.Row="0" Height="25" FontSize="15"/>
+
+            <Label Content="Trainne Name:" Grid.Column="0"  FontSize="15" Grid.Row="1"/>
+            <ComboBox x:Name="ComoBoxTrainees"  Grid.Column="1" Grid.Row="1" FontSize="15"
+                 Height="25" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                  ItemsSource="{Binding}" />
+
+            <Label Content="Test date" Grid.Column="0"  FontSize="15" Grid.Row="2"/>
+            <DatePicker x:Name="TestDatePicker" FontSize="15" DisplayDateStart="01.02.19"
+                     Grid.Column="1" Grid.Row="2">
+            </DatePicker>
+
+            <Label Content="Test Hour:" Grid.Column="0"  FontSize="15" Grid.Row="4"/>
+            <ComboBox x:Name="TestHour" FontSize="15" Grid.Column="1" Grid.Row="4">
+                <ComboBoxItem Content="9:00-10:00"/>
+                <ComboBoxItem Content="10:00-11:00"/>
+                <ComboBoxItem Content="11:00-12:00"/>
+                <ComboBoxItem Content="12:00-13:00"/>
+                <ComboBoxItem Content="13:00-14:00"/>
+                <ComboBoxItem Content="14:00-15:00"/>
+            </ComboBox>
+            
+        </Grid>
+        <Button x:Name="cheakTesters" Grid.Row="2" FontSize="15" Height="30" 
+                Content="לחץ לבדיקת זמינות של בוחנים בתאריך ובמרחק הנבחרים" Click="cheakTesters_Click"/>
+        
+
+        <Grid x:Name="TestDetailsContinue" IsEnabled="False" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Tester Name:" Grid.Column="0"  FontSize="15" Grid.Row="0"/>
+            <ComboBox x:Name="ComoBoxTesters"  Grid.Column="1" Grid.Row="0" FontSize="15"
+                 Height="25" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                  ItemsSource="{Binding}" />
+        </Grid>
+
+        <Button x:Name="AddTestButton" Content="צור מבחן" IsEnabled="False"
+                Grid.Row="4" Click="AddTestButton_Click"  />
+
+    </Grid>
+</Window>

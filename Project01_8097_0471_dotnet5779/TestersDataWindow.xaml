@@ -1,0 +1,37 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PL.TestersDataWindow"
+        mc:Ignorable="d"
+        Title="TestersDataWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="testerViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:Tester}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource testerViewSource}">
+
+        <DataGrid x:Name="testerDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="72,97,51,122" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn x:Name="dateOfBirthColumn" Width="SizeToHeader" Header="Date Of Birth">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding DateOfBirth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="firstNameColumn" Width="SizeToHeader" Header="First Name" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn x:Name="genderColumn" Width="SizeToHeader" Header="Gender" Binding="{Binding Gender}"/>
+                <DataGridTextColumn x:Name="idColumn" Width="SizeToHeader" Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn x:Name="lastNameColumn" Width="SizeToHeader" Header="Last Name" Binding="{Binding LastName}"/>
+                <DataGridTextColumn x:Name="maximumDistanceFromAddressColumn" Width="SizeToHeader" Header="Maximum Distance From Address" Binding="{Binding MaximumDistanceFromAddress}"/>
+                <DataGridTextColumn x:Name="maxOfTestInWeekColumn" Width="SizeToHeader" Header="Max Of Test In Week" Binding="{Binding MaxOfTestInWeek}"/>
+                <DataGridTextColumn x:Name="numOfExperienceColumn" Width="SizeToHeader" Header="Num Of Experience" Binding="{Binding NumOfExperience}"/>
+                <DataGridTextColumn x:Name="numOfTestsInWeekColumn" Width="SizeToHeader" Header="Num Of Tests In Week" Binding="{Binding NumOfTestsInWeek}"/>
+                <DataGridTextColumn x:Name="pelephoneNumberColumn" Width="SizeToHeader" Header="Pelephone Number" Binding="{Binding PelephoneNumber}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
