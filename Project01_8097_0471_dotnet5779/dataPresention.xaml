@@ -13,7 +13,7 @@
         <Button x:Name="show_trainees" Content="הצג נבחנים"
                  VerticalAlignment="Center"
                 Width="200" Height="50"  FontSize="20" Click="show_trainees_Click"/>
-        <Button x:Name="show_tests" Content="הצג נבחנים"
+        <Button x:Name="show_tests" Content="הצג מבחנים"
                  VerticalAlignment="Bottom"
                 Width="200" Height="50"    FontSize="20" Click="show_tests_Click"/>
         

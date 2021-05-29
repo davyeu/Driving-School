@@ -25,8 +25,7 @@ namespace PL
         public PresentTests()
         {
             InitializeComponent();
-            dataTableColection = getDataTable();
-            getDataTable();
+            dataTableColection = getDataTable();         
             gridTests.DataContext = dataTableColection.DefaultView;
         }
 

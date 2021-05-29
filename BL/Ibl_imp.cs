@@ -214,7 +214,7 @@ namespace BL
             /// <returns> list of suitable testers          </returns>
 
             //grouping that accepts all testers who work on a given date and time
-            List<Test> arry = dal.GetTests(/*item => item.TimeOfTest == dayAndHour*/);
+           
             
             int day = Convert.ToInt32(dayAndHour.DayOfWeek);
             // the variable "DayOfWeek" return An enumerated constant that indicates the day of the week 
@@ -231,7 +231,7 @@ namespace BL
             List<Tester> selectedTesters = new List<Tester>();
             foreach (Tester t in allTester)
             {
-                if (t.ArrayOfWorkerDays[day, hour] == false&&arry.Find(item=>item.IdOfTester==t.Id)==null)
+                if (t.ArrayOfWorkerDays[day, hour] == false) //namely he open for test at this time
                     selectedTesters.Add(t);
             }
             return selectedTesters;

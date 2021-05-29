@@ -53,6 +53,7 @@ namespace PL
             }
             BL.Ibl blayer = BL.Ibl_imp.GetInstance;
             blayer.UpdateTester(updatedTester);
+            MessageBox.Show("the tester shcedule updated successfuly");
         }
     }
 }

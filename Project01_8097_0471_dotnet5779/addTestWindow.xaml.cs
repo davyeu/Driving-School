@@ -52,7 +52,7 @@ namespace PL
             try
             {
                 temp = (DateTime)TestDatePicker.SelectedDate;
-                string choise = TestHour.SelectedValue.ToString();
+                string choise = TestHour.SelectedValue.ToString();//TestHour is the name related comboBox
                 switch (choise)
                 {
                     case "System.Windows.Controls.ComboBoxItem: 9:00-10:00": 
@@ -87,11 +87,8 @@ namespace PL
             }
             ComoBoxTesters.DataContext = TesterCollection;
             // cheaking for  suitable Testers
-            var suitableTesters = from item in blayer.openTesters(timeOfTheTest)
-                                  from item2 in blayer.testersInTheArae(chosenTr.Address)
-                                  where item.Id == item2.Id
-                                  select item;
-
+            var suitableTesters = blayer.openTesters(timeOfTheTest);                              
+                                 
             foreach (var item3 in suitableTesters)
                 TesterCollection.Add(item3);
            
@@ -115,7 +112,7 @@ namespace PL
         {
             if (ComoBoxTesters.SelectedValue== null)
             {
-                MessageBox.Show("please chosse a tester from the list");
+                MessageBox.Show("please choose a tester from the list");
                 return;
             }
             foreach (var item in blayer.GetTesters())
@@ -126,7 +123,7 @@ namespace PL
                     try {
                         BE.Test newTest = new BE.Test(chosenTs, chosenTr);
                         newTest.TimeOfTest = timeOfTheTest;
-                            blayer.AddTest(newTest);
+                        blayer.AddTest(newTest);
                             
                     }
                     catch (Exception ex)
@@ -135,7 +132,7 @@ namespace PL
                         MessageBox.Show(ex.Message);
                         return;
                     }
-                    MessageBox.Show("The Test crate successfuly!");
+                    MessageBox.Show("The Test created successfuly!");
                     this.Close();
                 }
             }
